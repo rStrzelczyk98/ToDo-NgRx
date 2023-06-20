@@ -1,0 +1,9 @@
+button {
+  outline: transparent;
+  border: none;
+  background-color: transparent;
+}
+.wrapper {
+  margin-top: 4rem;
+  max-width: 50rem;
+}
