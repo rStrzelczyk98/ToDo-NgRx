@@ -14,3 +14,4 @@ export const selectCheckedTasks = createSelector(
   selectTasks,
   (tasks: taskData[]) => tasks.filter((task) => task.checked)
 );
+export const selectCounter = (state: { data: Data }) => state.data.counter;

@@ -43,7 +43,7 @@ export class ToDoListComponent {
 
   private combineStreams(selector: any) {
     this.tasks$ = combineLatest([
-      this.store.select(selector),
+      this.store.select(selector).pipe(map((tasks) => [...tasks].reverse())),
       this.tasksStatus(selectActiveTasks),
       this.tasksStatus(selectCheckedTasks),
     ]).pipe(
