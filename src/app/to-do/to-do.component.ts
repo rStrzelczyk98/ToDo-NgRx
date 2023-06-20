@@ -4,6 +4,7 @@ import { Data } from '../store/task.reducer';
 import { Observable } from 'rxjs';
 import { init } from '../store/task.actions';
 import { Router } from '@angular/router';
+import { selectCounter } from '../store/task.selectors';
 
 @Component({
   selector: 'app-to-do',
@@ -11,9 +12,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./to-do.component.css'],
 })
 export class ToDoComponent implements OnInit {
-  store$: Observable<Data>;
+  counter$: Observable<Number>;
   constructor(private route: Router, private store: Store<{ data: Data }>) {
-    this.store$ = this.store.select('data');
+    this.counter$ = this.store.select(selectCounter);
   }
   ngOnInit(): void {
     this.store.dispatch(init());
