@@ -1,0 +1,8 @@
+<div class="wrapper p-3 mx-auto">
+  <app-add-to-do></app-add-to-do>
+  <ng-container *ngIf="store$ | async as data">
+    <div class="card p-3 mt-5" *ngIf="data.counter">
+      <router-outlet></router-outlet>
+    </div>
+  </ng-container>
+</div>
